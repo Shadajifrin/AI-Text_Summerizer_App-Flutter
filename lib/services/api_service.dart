@@ -27,12 +27,11 @@ class GeminiService {
         final summary = data['candidates'][0]['content']['parts'][0]['text'];
         return summary.trim();
       } else {
-        print('🔴 Gemini Error Code: ${response.statusCode}');
-        print('🔴 Body: ${response.body}');
+     
         return 'Error: Unable to summarize. Check API key and request format.';
       }
     } catch (e) {
-      print('❌ Exception: $e');
+    
       return 'Error: ${e.toString()}';
     }
   }
